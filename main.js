@@ -51,7 +51,7 @@
 // }
 
 
-// clearHouse(false, (err, reward)=> {
+// clearHouse(true, (err, reward)=> {
 //     if (err) {
 //         document.write('wrong')
 //     } else {
@@ -95,49 +95,49 @@
 
 
 
-// let money = 0;
+let money = 0;
 
-// function clearHouse(isJobDone, cb) {
-//     setTimeout(()=> {
-//         if (isJobDone) {
-//             money = 500;
-//             cb(null, money);
-//         } else {
-//             cb('oops', null)
-//         }
-//     }, 2000)
-// }
+function clearHouse(isJobDone, cb) {
+    setTimeout(()=> {
+        if (isJobDone) {
+            money = 500;
+            cb(null, money);
+        } else {
+            cb('oops', null)
+        }
+    }, 2000)
+}
 
-// function buyJeans(money, cb) {
-//     setTimeout(() => {
-//         if(money > 200) {
-//             console.log('Good jeans');
-//             money = money - 200
-//             cb(null, money)
-//         } else {
-//             console.log('no money');
-//             cb('empty', null)
-//         }
-//     }, 1000);
-// }
-
-
+function buyJeans(money, cb) {
+    setTimeout(() => {
+        if(money > 200) {
+            console.log('Good jeans');
+            money = money - 200
+            cb(null, money)
+        } else {
+            console.log('no money');
+            cb('empty', null)
+        }
+    }, 1000);
+}
 
 
-// clearHouse(true, (err, data)=> {
-//     if (err) {
-//         document.write('house is not clear')
-//     } else {
-//         document.write('Job done')
-//         buyJeans(data, (e, rest) => {
-//             if(e) {
-//                 document.write('no money')
-//             } else {
-//                 document.write('hoooray')
-//             }
-//         })
-//     }
-// });
+
+
+clearHouse(true, (err, data)=> {
+    if (err) {
+        document.write('house is not clear')
+    } else {
+        document.write('Job done')
+        buyJeans(data, (e, rest) => {
+            if(e) {
+                document.write('no money')
+            } else {
+                document.write('hoooray')
+            }
+        })
+    }
+});
 
 
 
