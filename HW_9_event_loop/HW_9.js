@@ -28,165 +28,345 @@
 
 //______________________________callback________________________________________________
 
-let alarmClock = true;
-let wakeUp = false;
-let teethClean = false;
-let dressUp = false;
-let haveBreakfast = false;
-let fuelCar = false;
-let driveOffice = false;
-let workDone = false;
-let driveHome = false;
+// let alarmClock = true;
+// let wakeUp = false;
+// let teethClean = false;
+// let dressUp = false;
+// let haveBreakfast = false;
+// let fuelCar = false;
+// let driveOffice = false;
+// let workDone = false;
+// let driveHome = false;
 
 
-function doWakeUp(alarmClock, cb) {
-  setTimeout(() => {
-    if (alarmClock) {
-      wakeUp = true;
-      cb(null, wakeUp);
-      console.log('wake up');
-    } else {
-      cb('you are late', null)
-    }
-  }, 900);
-}
+// function doWakeUp(alarmClock, cb) {
+//   setTimeout(() => {
+//     if (alarmClock) {
+//       wakeUp = true;
+//       cb(null, wakeUp);
+//       console.log('wake up');
+//     } else {
+//       cb('you are late', null)
+//     }
+//   }, 900);
+// }
 
 
-function doTeethClean(wakeUp, cb) {
-  setTimeout(() => {
-    if (wakeUp) {
-      teethClean = true;
-      cb(null, teethClean);
-      console.log('clean your teeth');
-    } else {
-      cb('your tooth are not clean', null)
-    }
-  }, 800);
-}
+// function doTeethClean(wakeUp, cb) {
+//   setTimeout(() => {
+//     if (wakeUp) {
+//       teethClean = true;
+//       cb(null, teethClean);
+//       console.log('clean your teeth');
+//     } else {
+//       cb('your tooth are not clean', null)
+//     }
+//   }, 800);
+// }
 
-function doDressUp(teethClean, cb) {
-  setTimeout(() => {
-    if (teethClean) {
-      dressUp = true;
-      cb(null, dressUp);
-      console.log('dress up!');
-    } else {
-      cb('you cant dress', null)
-    }
-  }, 700);
-}
+// function doDressUp(teethClean, cb) {
+//   setTimeout(() => {
+//     if (teethClean) {
+//       dressUp = true;
+//       cb(null, dressUp);
+//       console.log('dress up!');
+//     } else {
+//       cb('you cant dress', null)
+//     }
+//   }, 700);
+// }
 
-function doBreakfast(dressUp, cb) {
-  setTimeout(() => {
-    if (dressUp) {
-      haveBreakfast = true;
-      cb(null, haveBreakfast);
-      console.log('here is your breakfast');
-    } else {
-      cb('you have nothing to eat', null)
-    }
-  }, 600);
-}
+// function doBreakfast(dressUp, cb) {
+//   setTimeout(() => {
+//     if (dressUp) {
+//       haveBreakfast = true;
+//       cb(null, haveBreakfast);
+//       console.log('here is your breakfast');
+//     } else {
+//       cb('you have nothing to eat', null)
+//     }
+//   }, 600);
+// }
 
-function doFuelCar(haveBreakfast, cb) {
-  setTimeout(() => {
-    if (haveBreakfast) {
-      fuelCar = true;
-      cb(null, fuelCar);
-      console.log('fuel your car');
-    } else {
-      cb('you can not fuel your car', null)
-    }
-  }, 500);
-}
+// function doFuelCar(haveBreakfast, cb) {
+//   setTimeout(() => {
+//     if (haveBreakfast) {
+//       fuelCar = true;
+//       cb(null, fuelCar);
+//       console.log('fuel your car');
+//     } else {
+//       cb('you can not fuel your car', null)
+//     }
+//   }, 500);
+// }
 
-function doDriveOffice(fuelCar, cb) {
-  setTimeout(() => {
-    if (fuelCar) {
-      driveOffice = true;
-      cb(null, driveOffice);
-      console.log('go to office');
-    } else {
-      cb('you cant drive without fuel', null)
-    }
-  }, 600);
-}
+// function doDriveOffice(fuelCar, cb) {
+//   setTimeout(() => {
+//     if (fuelCar) {
+//       driveOffice = true;
+//       cb(null, driveOffice);
+//       console.log('go to office');
+//     } else {
+//       cb('you cant drive without fuel', null)
+//     }
+//   }, 600);
+// }
 
-function finishWork(driveOffice, cb) {
-  setTimeout(() => {
-    if (driveOffice) {
-      workDone = true;
-      cb(null, workDone);
-      console.log('you have finished your work');
-    } else {
-      cb('you didnt finish your work', null)
-    }
-  }, 700);
-}
+// function finishWork(driveOffice, cb) {
+//   setTimeout(() => {
+//     if (driveOffice) {
+//       workDone = true;
+//       cb(null, workDone);
+//       console.log('you have finished your work');
+//     } else {
+//       cb('you didnt finish your work', null)
+//     }
+//   }, 700);
+// }
 
-function doDriveHome(workDone, cb) {
-  setTimeout(() => {
-    if (workDone) {
-      driveHome = true;
-      cb(null, driveHome);
-      console.log('you can drive home now');
-    } else {
-      cb('you cant drive home', null)
-    }
-  }, 800);
-}
-
-
+// function doDriveHome(workDone, cb) {
+//   setTimeout(() => {
+//     if (workDone) {
+//       driveHome = true;
+//       cb(null, driveHome);
+//       console.log('you can drive home now');
+//     } else {
+//       cb('you cant drive home', null)
+//     }
+//   }, 800);
+// }
 
 
-doWakeUp(alarmClock, (error, wakeUp) => {
-  if (error) {
-    console.log('error');
-  } else {
-    doTeethClean(wakeUp, (error, teeth) => {
-      if (error) {
-        console.log('error');
+
+
+// doWakeUp(alarmClock, (error, wakeUp) => {
+//   if (error) {
+//     console.log('error');
+//   } else {
+//     doTeethClean(wakeUp, (error, teeth) => {
+//       if (error) {
+//         console.log('error');
+//       } else {
+//         doDressUp(teeth, (error, dress) => {
+//           if (error) {
+//             console.log('error');
+//           } else {
+//             doBreakfast(dress, (error, breakfast) => {
+//               if (error) {
+//                 console.log('error');
+//               } else {
+//                 doFuelCar(breakfast, (error, fuel) => {
+//                   if (error) {
+//                     console.log('error');
+//                   } else {
+//                     doDriveOffice(fuel, (error, office) => {
+//                       if (error) {
+//                         console.log('error');
+//                       } else {
+//                         finishWork(office, (error, work) => {
+//                           if (error) {
+//                             console.log('error');
+//                           } else {
+//                             doDriveHome(work, (error, home) => {
+//                               if (error) {
+//                                 console.log('error');
+//                               } else {
+//                                 setTimeout(() => {
+//                                   console.log('Greetings!');
+//                                 }, 2000);
+//                               }
+//                             })
+//                           }
+//                         })
+//                       }
+//                     })
+//                   }
+//                 })
+//               }
+//             })
+//           }
+//         })
+//       }
+//     })
+//   }
+// });
+
+
+
+//___________________________PROMISE___________________________
+
+
+
+
+
+
+function doWakeUp(alarmClock) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (alarmClock) {
+        wakeUp = true;
+        resolve(wakeUp);
+        console.log('wake up');
       } else {
-        doDressUp(teeth, (error, dress) => {
-          if (error) {
-            console.log('error');
-          } else {
-            doBreakfast(dress, (error, breakfast) => {
-              if (error) {
-                console.log('error');
-              } else {
-                doFuelCar(breakfast, (error, fuel) => {
-                  if (error) {
-                    console.log('error');
-                  } else {
-                    doDriveOffice(fuel, (error, office) => {
-                      if (error) {
-                        console.log('error');
-                      } else {
-                        finishWork(office, (error, work) => {
-                          if (error) {
-                            console.log('error');
-                          } else {
-                            doDriveHome(work, (error, home) => {
-                              if (error) {
-                                console.log('error');
-                              } else {
-                                setTimeout(() => {
-                                  console.log('Greetings!');
-                                }, 2000);
-                              }
-                            })
-                          }
-                        })
-                      }
-                    })
-                  }
-                })
-              }
-            })
-          }
-        })
+        reject('you are late')
       }
+    }, 100);
+  })
+}
+
+
+function doTeethClean(wakeUp) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (wakeUp) {
+        teethClean = true;
+        resolve(teethClean);
+        console.log('clean your teeth');
+      } else {
+        reject('your tooth are not clean')
+      }
+    }, 300);
+  })
+}
+
+function doDressUp(teethClean) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (teethClean) {
+        dressUp = true;
+        resolve(dressUp);
+        console.log('dress up!');
+      } else {
+        reject('you cant dress')
+      }
+    }, 700);
+  })
+}
+
+function doBreakfast(dressUp) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (dressUp) {
+        haveBreakfast = true;
+        resolve(haveBreakfast);
+        console.log('here is your breakfast');
+      } else {
+        reject('you have nothing to eat')
+      }
+    }, 1000);
+  })
+}
+
+function doFuelCar(haveBreakfast) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (haveBreakfast) {
+        fuelCar = true;
+        resolve(fuelCar);
+        console.log('fuel your car');
+      } else {
+        reject('you can not fuel your car')
+      }
+    }, 1500);
+  })
+}
+
+function doDriveOffice(fuelCar) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (fuelCar) {
+        driveOffice = true;
+        resolve(driveOffice);
+        console.log('go to office');
+      } else {
+        reject('you cant drive without fuel')
+      }
+    }, 1800);
+  })
+}
+
+function finishWork(driveOffice) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (driveOffice) {
+        workDone = true;
+        resolve(workDone);
+        console.log('you have finished your work');
+      } else {
+        reject('you didnt finish your work')
+      }
+    }, 2300);
+  })
+}
+
+function doDriveHome(workDone) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (workDone) {
+        driveHome = true;
+        resolve(driveHome);
+        console.log('you can drive home now');
+      } else {
+        reject('you cant drive home')
+      }
+    }, 2800);
+  })
+}
+
+doWakeUp(true).then(wake => {
+  doTeethClean(true).then(teeth => {
+    doDressUp(true).then(dress => {
+      doBreakfast(true).then(breakfast => {
+        doFuelCar(true).then(fuel => {
+          doDriveOffice(true).then(office => {
+            finishWork(true).then(work => {
+              doDriveHome(true).then(home => {
+                
+              })             
+            })            
+          })          
+        })        
+      })      
     })
-  }
-});
+  })
+  })
+  
+  
+  
+  
+  
+  
+  
+
+
+// doWakeUp(true).then(wake => {
+//   return wake;
+// })
+
+// doTeethClean(true).then(teeth => {
+//   return teeth;
+// })
+
+// doDressUp(true).then(dress => {
+//   return dress;
+// })
+
+// doBreakfast(true).then(breakfast => {
+//   return breakfast;
+// })
+
+// doFuelCar(true).then(fuel => {
+//   return fuel;
+// })
+
+// doDriveOffice(true).then(office => {
+//   return office;
+// })
+
+// finishWork(true).then(work => {
+//   return work;
+// })
+
+// doDriveHome(true).then(home => {
+//   return home;
+// })
