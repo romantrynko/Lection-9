@@ -303,62 +303,33 @@ function doDriveHome(workDone) {
       }
     }, 2800);
   })
-}
+}  
+
 
 doWakeUp(true).then(wake => {
-  doTeethClean(true).then(teeth => {
-    doDressUp(true).then(dress => {
-      doBreakfast(true).then(breakfast => {
-        doFuelCar(true).then(fuel => {
-          doDriveOffice(true).then(office => {
-            finishWork(true).then(work => {
-              doDriveHome(true).then(home => {
-                
-              })             
-            })            
-          })          
-        })        
-      })      
-    })
-  })
-  })
-  
-  
-  
-  
-  
-  
-  
+  return doTeethClean(wake);
+})
 
+.then(teeth => {
+  return doDressUp(teeth);
+})
 
-// doWakeUp(true).then(wake => {
-//   return wake;
-// })
+.then(dress => {
+  return doBreakfast(dress);
+})
 
-// doTeethClean(true).then(teeth => {
-//   return teeth;
-// })
+.then(breakfast => {
+  return doFuelCar(breakfast);
+})
 
-// doDressUp(true).then(dress => {
-//   return dress;
-// })
+.then(fuel => {
+  return doDriveOffice(fuel);
+})
 
-// doBreakfast(true).then(breakfast => {
-//   return breakfast;
-// })
+.then(office => {
+  return finishWork(office);
+})
 
-// doFuelCar(true).then(fuel => {
-//   return fuel;
-// })
-
-// doDriveOffice(true).then(office => {
-//   return office;
-// })
-
-// finishWork(true).then(work => {
-//   return work;
-// })
-
-// doDriveHome(true).then(home => {
-//   return home;
-// })
+.then(work => {
+  return doDriveHome(work);
+})
