@@ -29,14 +29,6 @@
 //______________________________callback________________________________________________
 
 // let alarmClock = true;
-// let wakeUp = false;
-// let teethClean = false;
-// let dressUp = false;
-// let haveBreakfast = false;
-// let fuelCar = false;
-// let driveOffice = false;
-// let workDone = false;
-// let driveHome = false;
 
 
 // function doWakeUp(alarmClock, cb) {
