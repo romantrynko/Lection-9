@@ -28,104 +28,117 @@
 
 //______________________________callback________________________________________________
 
+// function randomDelay() {
+// 	return Math.floor(Math.random() * 2000);
+// }
+
 // let alarmClock = true;
 
 
 // function doWakeUp(alarmClock, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (alarmClock) {
 //       wakeUp = true;
 //       cb(null, wakeUp);
-//       console.log('wake up');
+//       console.log('wake up', delay);
 //     } else {
 //       cb('you are late', null)
 //     }
-//   }, 900);
+//   }, delay);
 // }
 
 
 // function doTeethClean(wakeUp, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (wakeUp) {
 //       teethClean = true;
 //       cb(null, teethClean);
-//       console.log('clean your teeth');
+//       console.log('clean your teeth', delay);
 //     } else {
 //       cb('your tooth are not clean', null)
 //     }
-//   }, 800);
+//   }, delay);
 // }
 
 // function doDressUp(teethClean, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (teethClean) {
 //       dressUp = true;
 //       cb(null, dressUp);
-//       console.log('dress up!');
+//       console.log('dress up!', delay);
 //     } else {
 //       cb('you cant dress', null)
 //     }
-//   }, 700);
+//   }, delay);
 // }
 
 // function doBreakfast(dressUp, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (dressUp) {
 //       haveBreakfast = true;
 //       cb(null, haveBreakfast);
-//       console.log('here is your breakfast');
+//       console.log('here is your breakfast', delay);
 //     } else {
 //       cb('you have nothing to eat', null)
 //     }
-//   }, 600);
+//   }, delay);
 // }
 
 // function doFuelCar(haveBreakfast, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (haveBreakfast) {
 //       fuelCar = true;
 //       cb(null, fuelCar);
-//       console.log('fuel your car');
+//       console.log('fuel your car', delay);
 //     } else {
 //       cb('you can not fuel your car', null)
 //     }
-//   }, 500);
+//   }, delay);
 // }
 
 // function doDriveOffice(fuelCar, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (fuelCar) {
 //       driveOffice = true;
 //       cb(null, driveOffice);
-//       console.log('go to office');
+//       console.log('go to office', delay);
 //     } else {
 //       cb('you cant drive without fuel', null)
 //     }
-//   }, 600);
+//   }, delay);
 // }
 
 // function finishWork(driveOffice, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
 //     if (driveOffice) {
 //       workDone = true;
 //       cb(null, workDone);
-//       console.log('you have finished your work');
+//       console.log('you have finished your work', delay);
 //     } else {
 //       cb('you didnt finish your work', null)
 //     }
-//   }, 700);
+//   }, delay);
 // }
 
 // function doDriveHome(workDone, cb) {
+//   let delay = randomDelay();
 //   setTimeout(() => {
+
 //     if (workDone) {
 //       driveHome = true;
 //       cb(null, driveHome);
-//       console.log('you can drive home now');
+//       console.log('you can drive home now', delay);
 //     } else {
 //       cb('you cant drive home', null)
 //     }
-//   }, 800);
+//   }, delay);
 // }
 
 
@@ -188,148 +201,344 @@
 //___________________________PROMISE___________________________
 
 
+// function randomDelay() {
+// 	return Math.floor(Math.random() * 2000);
+// }
 
+
+// function doWakeUp(alarmClock) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (alarmClock) {
+//         wakeUp = true;
+//         resolve(wakeUp);
+//         console.log('wake up', delay);
+//       } else {
+//         reject('you are late')
+//       }
+//     }, delay);
+//   })
+// }
+
+
+// function doTeethClean(wakeUp) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (wakeUp) {
+//         teethClean = true;
+//         resolve(teethClean);
+//         console.log('clean your teeth', delay);
+//       } else {
+//         reject('your tooth are not clean')
+//       }
+//     }, delay);
+//   })
+// }
+
+// function doDressUp(teethClean) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (teethClean) {
+//         dressUp = true;
+//         resolve(dressUp);
+//         console.log('dress up!', delay);
+//       } else {
+//         reject('you cant dress')
+//       }
+//     }, delay);
+//   })
+// }
+
+// function doBreakfast(dressUp) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (dressUp) {
+//         haveBreakfast = true;
+//         resolve(haveBreakfast);
+//         console.log('here is your breakfast', delay);
+//       } else {
+//         reject('you have nothing to eat')
+//       }
+//     }, delay);
+//   })
+// }
+
+// function doFuelCar(haveBreakfast) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (haveBreakfast) {
+//         fuelCar = true;
+//         resolve(fuelCar);
+//         console.log('fuel your car', delay);
+//       } else {
+//         reject('you can not fuel your car')
+//       }
+//     }, delay);
+//   })
+// }
+
+// function doDriveOffice(fuelCar) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (fuelCar) {
+//         driveOffice = true;
+//         resolve(driveOffice);
+//         console.log('go to office', delay);
+//       } else {
+//         reject('you cant drive without fuel')
+//       }
+//     }, delay);
+//   })
+// }
+
+// function finishWork(driveOffice) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (driveOffice) {
+//         workDone = true;
+//         resolve(workDone);
+//         console.log('you have finished your work', delay);
+//       } else {
+//         reject('you didnt finish your work')
+//       }
+//     }, delay);
+//   })
+// }
+
+// function doDriveHome(workDone) {
+//   return new Promise((resolve, reject) => {
+//     let delay = randomDelay();
+//     setTimeout(() => {
+//       if (workDone) {
+//         driveHome = true;
+//         resolve(driveHome);
+//         console.log('you can drive home now', delay);
+//       } else {
+//         reject('you cant drive home')
+//       }
+//     }, delay);
+//   })
+// }  
+
+
+// doWakeUp(true).then(wake => {
+//   return doTeethClean(wake);
+// })
+
+// .then(teeth => {
+//   return doDressUp(teeth);
+// })
+
+// .then(dress => {
+//   return doBreakfast(dress);
+// })
+
+// .then(breakfast => {
+//   return doFuelCar(breakfast);
+// })
+
+// .then(fuel => {
+//   return doDriveOffice(fuel);
+// })
+
+// .then(office => {
+//   return finishWork(office);
+// })
+
+// .then(work => {
+//   return doDriveHome(work);
+// })
+
+
+
+
+//_______ASYNC____await___________________________
+
+function randomDelay() {
+	return Math.floor(Math.random() * 2000);
+}
+
+// check this function
+// function doWakeUp(alarmClock) {
+//   return new Promise((resolve, reject) => {
+//   	const startTime = Date.now();
+  
+//     setTimeout(() => {
+// 			/**
+//       * the same in every function
+//       */
+//       let delay = randomDelay();
+      
+//       if (alarmClock) {
+//         wakeUp = true;
+//         resolve(wakeUp);
+        
+//         /**
+//         * added delay to console, for more verbose output
+//         */
+//         console.log('wake up', delay);
+//       } else {
+//         reject('you are late')
+//       }
+//     }, delay); // pass it here
+//   })
+// }
+
+  
 
 
 
 function doWakeUp(alarmClock) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (alarmClock) {
         wakeUp = true;
         resolve(wakeUp);
-        console.log('wake up');
+        console.log('wake up', delay);
       } else {
         reject('you are late')
       }
-    }, 100);
+    }, delay);
   })
 }
 
 
 function doTeethClean(wakeUp) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (wakeUp) {
         teethClean = true;
         resolve(teethClean);
-        console.log('clean your teeth');
+        console.log('clean your teeth', delay);
       } else {
         reject('your tooth are not clean')
       }
-    }, 300);
+    }, delay);
   })
 }
 
 function doDressUp(teethClean) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (teethClean) {
         dressUp = true;
         resolve(dressUp);
-        console.log('dress up!');
+        console.log('dress up!', delay);
       } else {
         reject('you cant dress')
       }
-    }, 700);
+    }, delay);
   })
 }
 
 function doBreakfast(dressUp) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (dressUp) {
         haveBreakfast = true;
         resolve(haveBreakfast);
-        console.log('here is your breakfast');
+        console.log('here is your breakfast', delay);
       } else {
         reject('you have nothing to eat')
       }
-    }, 1000);
+    }, delay);
   })
 }
 
 function doFuelCar(haveBreakfast) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (haveBreakfast) {
         fuelCar = true;
         resolve(fuelCar);
-        console.log('fuel your car');
+        console.log('fuel your car', delay);
       } else {
         reject('you can not fuel your car')
       }
-    }, 1500);
+    }, delay);
   })
 }
 
 function doDriveOffice(fuelCar) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (fuelCar) {
         driveOffice = true;
         resolve(driveOffice);
-        console.log('go to office');
+        console.log('go to office', delay);
       } else {
         reject('you cant drive without fuel')
       }
-    }, 1800);
+    }, delay);
   })
 }
 
 function finishWork(driveOffice) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (driveOffice) {
         workDone = true;
         resolve(workDone);
-        console.log('you have finished your work');
+        console.log('you have finished your work', delay);
       } else {
         reject('you didnt finish your work')
       }
-    }, 2300);
+    }, delay);
   })
 }
 
 function doDriveHome(workDone) {
   return new Promise((resolve, reject) => {
+    let delay = randomDelay();
     setTimeout(() => {
       if (workDone) {
         driveHome = true;
         resolve(driveHome);
-        console.log('you can drive home now');
+        console.log('you can drive home now', delay);
       } else {
         reject('you cant drive home')
       }
-    }, 2800);
+    }, delay);
   })
 }  
 
 
-doWakeUp(true).then(wake => {
-  return doTeethClean(wake);
-})
+async function daySchedule() {
+  try {
 
-.then(teeth => {
-  return doDressUp(teeth);
-})
+    let wake = await doWakeUp(true);
 
-.then(dress => {
-  return doBreakfast(dress);
-})
+    let teeth = await doTeethClean(wake);
 
-.then(breakfast => {
-  return doFuelCar(breakfast);
-})
+    let dress = await doDressUp(teeth);
 
-.then(fuel => {
-  return doDriveOffice(fuel);
-})
+    let breakfast = await doBreakfast(dress);
 
-.then(office => {
-  return finishWork(office);
-})
+    let fuel = await doFuelCar(breakfast);
 
-.then(work => {
-  return doDriveHome(work);
-})
+    let office = await doDriveOffice(fuel);
+
+    let work = await finishWork(office);
+
+    let home = await doDriveHome(work);
+
+  } catch (error) {
+    console.error('error');
+  }
+}
+
+daySchedule();
