@@ -365,35 +365,6 @@ function randomDelay() {
 	return Math.floor(Math.random() * 2000);
 }
 
-// check this function
-// function doWakeUp(alarmClock) {
-//   return new Promise((resolve, reject) => {
-//   	const startTime = Date.now();
-  
-//     setTimeout(() => {
-// 			/**
-//       * the same in every function
-//       */
-//       let delay = randomDelay();
-      
-//       if (alarmClock) {
-//         wakeUp = true;
-//         resolve(wakeUp);
-        
-//         /**
-//         * added delay to console, for more verbose output
-//         */
-//         console.log('wake up', delay);
-//       } else {
-//         reject('you are late')
-//       }
-//     }, delay); // pass it here
-//   })
-// }
-
-  
-
-
 
 function doWakeUp(alarmClock) {
   return new Promise((resolve, reject) => {
